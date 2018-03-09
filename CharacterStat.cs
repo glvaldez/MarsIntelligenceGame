@@ -15,19 +15,16 @@ public class CharacterStat : MonoBehaviour {
     public GameObject health30;
     public GameObject health20;
     public GameObject health10;
+    
     // Use this for initialization
     void Start () {
-
         this.health = 40;
-
     }
 
     // Update is called once per frame
     void Update () {
-        if (Orb.blueGrabbed == true)
-        {
-            if (this.health == 80)
-            {
+        if (Orb.blueGrabbed == true){
+            if (this.health == 80){
                 health80.SetActive(true);
                 health70.SetActive(true);
                 health60.SetActive(true);
@@ -37,8 +34,7 @@ public class CharacterStat : MonoBehaviour {
                 health20.SetActive(true);
                 health10.SetActive(true);
             }
-            else if (this.health == 70)
-            {
+            else if (this.health == 70){
                 health80.SetActive(false);
                 health70.SetActive(true);
                 health60.SetActive(true);
@@ -48,8 +44,7 @@ public class CharacterStat : MonoBehaviour {
                 health20.SetActive(true);
                 health10.SetActive(true);
             }
-            else if (this.health == 60)
-            {
+            else if (this.health == 60){
                 health80.SetActive(false);
                 health70.SetActive(false);
                 health60.SetActive(true);
@@ -59,8 +54,7 @@ public class CharacterStat : MonoBehaviour {
                 health20.SetActive(true);
                 health10.SetActive(true);
             }
-            else if (this.health == 50)
-            {
+            else if (this.health == 50){
                 health80.SetActive(false);
                 health70.SetActive(false);
                 health60.SetActive(false);
@@ -71,8 +65,7 @@ public class CharacterStat : MonoBehaviour {
                 health10.SetActive(true);
             }
         }
-        if (this.health == 40)
-        {
+        if (this.health == 40){
             health80.SetActive(false);
             health70.SetActive(false);
             health60.SetActive(false);
@@ -82,8 +75,7 @@ public class CharacterStat : MonoBehaviour {
             health20.SetActive(true);
             health10.SetActive(true);
         }
-        else if (this.health == 30)
-        {
+        else if (this.health == 30){
             health80.SetActive(false);
             health70.SetActive(false);
             health60.SetActive(false);
@@ -93,8 +85,7 @@ public class CharacterStat : MonoBehaviour {
             health20.SetActive(true);
             health10.SetActive(true);
         }
-        else if (this.health == 20)
-        {
+        else if (this.health == 20){
             health80.SetActive(false);
             health70.SetActive(false);
             health60.SetActive(false);
@@ -104,8 +95,7 @@ public class CharacterStat : MonoBehaviour {
             health20.SetActive(true);
             health10.SetActive(true);
         }
-        else if (this.health == 10)
-        {
+        else if (this.health == 10){
             health80.SetActive(false);
             health70.SetActive(false);
             health60.SetActive(false);
@@ -115,8 +105,7 @@ public class CharacterStat : MonoBehaviour {
             health20.SetActive(false);
             health10.SetActive(true);
         }
-        else if (this.health == 0)
-        {
+        else if (this.health == 0){
             health80.SetActive(false);
             health70.SetActive(false);
             health60.SetActive(false);
@@ -128,27 +117,21 @@ public class CharacterStat : MonoBehaviour {
         }
     }
 
-    public int getHealth()
-    {
+    public int getHealth(){
         return this.health;
     }
 
-    public void takeDamage(int damageTaken)
-    {
+    public void takeDamage(int damageTaken){
         this.health -= damageTaken;
     }
-    public void earnHealth(int healthEarned)
-    {
-        if (Orb.blueGrabbed == true)
-        {
-            if (this.health < 80)
-            {
+    public void earnHealth(int healthEarned){
+        if (Orb.blueGrabbed == true){
+            if (this.health < 80){
                 this.health += healthEarned;
             }
         }
         else {
-            if (this.health < 40)
-            {
+            if (this.health < 40){
                 this.health += healthEarned;
             }
         }
@@ -156,8 +139,7 @@ public class CharacterStat : MonoBehaviour {
 
     public void restoreHealth()
     {
-        if (Orb.blueGrabbed == true)
-        {
+        if (Orb.blueGrabbed == true){
             this.health = 80;
         }
         else {
